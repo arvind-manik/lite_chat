@@ -1,4 +1,4 @@
-package com.example.flutter_chat_ui_starter
+package com.artun_o.lite_chat
 
 import android.os.Bundle
 import io.flutter.app.FlutterActivity
