@@ -1,3 +1,4 @@
+import 'package:LiteChat/constants.dart';
 import 'package:LiteChat/generated/l10n.dart';
 import 'package:LiteChat/widgets/category_selector.dart';
 import 'package:LiteChat/widgets/favourites.dart';
@@ -11,14 +12,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   //UI constants!
-  static final double titleFontSize = 28.0;
-
-  //Icon sizes
   static final double tabIconSize = 30.0;
   static final double searchIconSize = 30.0;
-
-  //Radius
-  static final double listBorderRadius = 30.0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.white,
             onPressed: () {}),
         title: Text(S.of(context).home_screen_title,
-            textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: titleFontSize, fontWeight: FontWeight.bold)),
+                fontSize: LiteChatConstants.titleFontSize,
+                fontWeight: FontWeight.bold)),
         elevation: 0.0,
         actions: <Widget>[
           IconButton(
@@ -51,9 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
                 decoration: BoxDecoration(
                     color: Theme.of(context).accentColor,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(listBorderRadius),
-                        topRight: Radius.circular(listBorderRadius))),
+                    borderRadius: LiteChatConstants.listBorderRadius),
                 child: Column(
                   children: <Widget>[FavouritesWidget(), RecentChats()],
                 )),

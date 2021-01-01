@@ -1,6 +1,8 @@
 import 'package:LiteChat/constants.dart';
 import 'package:LiteChat/generated/l10n.dart';
 import 'package:LiteChat/models/message_model.dart';
+import 'package:LiteChat/models/user_model.dart';
+import 'package:LiteChat/screens/chat_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -54,22 +56,28 @@ class FavouritesWidget extends StatelessWidget {
                       horizontal: eachItemLeftPadding),
                   itemCount: favorites.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(eachItemImagePadding),
-                      child: Column(
-                        children: <Widget>[
-                          CircleAvatar(
-                            radius: circleAvatarRadius,
-                            backgroundImage:
-                                AssetImage(favorites[index].imageUrl),
-                          ),
-                          SizedBox(height: textSeparatorHeight),
-                          Text(favorites[index].name,
-                              style: TextStyle(
-                                  color: Colors.blueGrey,
-                                  fontSize: nameFontSize,
-                                  fontWeight: FontWeight.w600)),
-                        ],
+                    User favourite = favorites[index];
+                    return GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => ChatScreen(favourite))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(eachItemImagePadding),
+                        child: Column(
+                          children: <Widget>[
+                            CircleAvatar(
+                              radius: circleAvatarRadius,
+                              backgroundImage: AssetImage(favourite.imageUrl),
+                            ),
+                            SizedBox(height: textSeparatorHeight),
+                            Text(favourite.name,
+                                style: TextStyle(
+                                    color: Colors.blueGrey,
+                                    fontSize: nameFontSize,
+                                    fontWeight: FontWeight.w600)),
+                          ],
+                        ),
                       ),
                     );
                   }))
