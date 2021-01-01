@@ -1,6 +1,7 @@
 import 'package:LiteChat/generated/l10n.dart';
 import 'package:LiteChat/widgets/category_selector.dart';
 import 'package:LiteChat/widgets/favourites.dart';
+import 'package:LiteChat/widgets/recent_chats.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         topLeft: Radius.circular(listBorderRadius),
                         topRight: Radius.circular(listBorderRadius))),
                 child: Column(
-                  children: <Widget>[FavouritesWidget()],
+                  children: <Widget>[FavouritesWidget(), RecentChats()],
                 )),
           )
         ],

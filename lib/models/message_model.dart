@@ -76,14 +76,14 @@ List<Message> chats = [
   ),
   Message(
     sender: sam,
-    time: now - 500000,
+    time: now - 85000000,
     text: 'Hey, how\'s it going? What did you do today?',
     isLiked: false,
     unread: false,
   ),
   Message(
     sender: greg,
-    time: now - 7800000,
+    time: now - 780000000,
     text: 'Hey, how\'s it going? What did you do today?',
     isLiked: false,
     unread: false,
