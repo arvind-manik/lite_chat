@@ -5,7 +5,8 @@ class LiteChatUtil {
   static final monthAndDateFormat = DateFormat('EEE, MMM d');
   static final monthAndYearFormat = DateFormat('MMM d, ' 'y');
 
-  static String getTimeOrDate(DateTime dateTime) {
+  static String getTimeOrDate(int timestamp) {
+    DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp);
     DateTime now = DateTime.now();
     return isSameDay(now, dateTime)
         ? timeFormat.format(dateTime)

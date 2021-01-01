@@ -28,6 +28,8 @@ class RecentChats extends StatelessWidget {
 
   static final BorderRadius newIconBorderRadius = BorderRadius.circular(30.0);
 
+  static final double recentMessageWidthFactor = 0.5;
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -38,11 +40,12 @@ class RecentChats extends StatelessWidget {
           child: ClipRRect(
             borderRadius: LiteChatConstants.listBorderRadius,
             child: ListView.builder(
+              physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
               itemCount: chats.length,
               itemBuilder: (BuildContext context, int index) {
                 final Message lastMessage = chats[index];
-                DateTime messageTime =
-                    DateTime.fromMillisecondsSinceEpoch(lastMessage.time);
+                int messageTime = lastMessage.time;
                 return GestureDetector(
                   onTap: () => Navigator.push(
                       context,
@@ -70,7 +73,8 @@ class RecentChats extends StatelessWidget {
                             ),
                             SizedBox(width: imageSeparartorWidth),
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.45,
+                              width: MediaQuery.of(context).size.width *
+                                  recentMessageWidthFactor,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [

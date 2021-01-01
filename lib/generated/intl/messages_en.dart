@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "groups_2" : MessageLookupByLibrary.simpleMessage("Online"),
     "groups_3" : MessageLookupByLibrary.simpleMessage("Requests"),
     "home_screen_title" : MessageLookupByLibrary.simpleMessage("LiteChat"),
-    "new_text" : MessageLookupByLibrary.simpleMessage("New")
+    "new_text" : MessageLookupByLibrary.simpleMessage("New"),
+    "type_message" : MessageLookupByLibrary.simpleMessage("Type a message..")
   };
 }

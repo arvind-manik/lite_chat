@@ -51,6 +51,8 @@ class FavouritesWidget extends StatelessWidget {
           Container(
               height: userListRowHeight,
               child: ListView.builder(
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(
                       horizontal: eachItemLeftPadding),

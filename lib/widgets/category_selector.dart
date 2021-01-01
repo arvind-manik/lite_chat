@@ -34,6 +34,8 @@ class _CategorySelectorState extends State<CategorySelector> {
         height: containerHeight,
         color: Theme.of(context).primaryColor,
         child: ListView.builder(
+          physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics()),
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
           itemBuilder: (BuildContext context, int index) {

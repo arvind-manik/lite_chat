@@ -104,6 +104,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Type a message..`
+  String get type_message {
+    return Intl.message(
+      'Type a message..',
+      name: 'type_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
