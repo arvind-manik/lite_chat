@@ -21,10 +21,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "favourites" : MessageLookupByLibrary.simpleMessage("Favourites"),
     "groups_0" : MessageLookupByLibrary.simpleMessage("Messages"),
     "groups_1" : MessageLookupByLibrary.simpleMessage("Groups"),
     "groups_2" : MessageLookupByLibrary.simpleMessage("Online"),
     "groups_3" : MessageLookupByLibrary.simpleMessage("Requests"),
-    "home_screen_title" : MessageLookupByLibrary.simpleMessage("Chats")
+    "home_screen_title" : MessageLookupByLibrary.simpleMessage("LiteChat")
   };
 }

@@ -35,10 +35,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Chats`
+  /// `LiteChat`
   String get home_screen_title {
     return Intl.message(
-      'Chats',
+      'LiteChat',
       name: 'home_screen_title',
       desc: '',
       args: [],
@@ -80,6 +80,16 @@ class S {
     return Intl.message(
       'Requests',
       name: 'groups_3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favourites`
+  String get favourites {
+    return Intl.message(
+      'Favourites',
+      name: 'favourites',
       desc: '',
       args: [],
     );

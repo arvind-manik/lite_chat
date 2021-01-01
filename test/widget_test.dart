@@ -9,12 +9,12 @@ import 'package:LiteChat/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-/**
- * 
- * DEFAULT tests created during flutter init.
- * TODO: Implement tests once done with the app
- * 
- */
+///
+///
+/// DEFAULT tests created during flutter init.
+/// TODO: Implement tests once done with the app
+///
+///
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

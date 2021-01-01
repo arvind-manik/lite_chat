@@ -15,8 +15,8 @@ class LiteChat extends StatelessWidget {
         title: 'LiteChat',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            primaryColor: Colors.red,
-            accentColor: Color(LiteChatConstants.accentColor)),
+            primaryColor: LiteChatConstants.primaryColor,
+            accentColor: LiteChatConstants.accentColor),
         home: HomeScreen(),
         localizationsDelegates: [
           S.delegate,

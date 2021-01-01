@@ -18,11 +18,21 @@ class _CategorySelectorState extends State<CategorySelector> {
     LiteChatTabs.REQUESTS
   ];
 
+  //UI constants!
+  static final double fontSize = 24.0;
+
+  static final double letterSpacing = 1.2;
+
+  static final double containerHeight = 90.0;
+
+  static const double paddingVertical = 30.0;
+  static const double paddingHorizontal = 20.0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: LiteChatConstants.tabGroupChooserHeight,
-        color: Colors.deepPurpleAccent,
+        height: containerHeight,
+        color: Theme.of(context).primaryColor,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
@@ -43,20 +53,23 @@ class _CategorySelectorState extends State<CategorySelector> {
                 break;
             }
 
-            return widget(
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  this.selectedTabGroupIndex = index;
+                });
+              },
               child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      vertical: LiteChatConstants.tabGroupPaddingVertical,
-                      horizontal: LiteChatConstants.tabGroupPaddingHorizontal),
+                      vertical: paddingVertical, horizontal: paddingHorizontal),
                   child: Text(l10nValue,
                       style: TextStyle(
                           color: index == this.selectedTabGroupIndex
                               ? Colors.white
                               : Colors.white60,
-                          fontSize: LiteChatConstants.tabGroupFontSize,
+                          fontSize: fontSize,
                           fontWeight: FontWeight.bold,
-                          letterSpacing:
-                              LiteChatConstants.tabGroupLetterSpacing))),
+                          letterSpacing: letterSpacing))),
             );
           },
         ));
