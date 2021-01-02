@@ -1,7 +1,9 @@
 import 'package:LiteChat/constants.dart';
 import 'package:LiteChat/generated/l10n.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'screens/home_screen.dart';
 
@@ -17,7 +19,12 @@ class LiteChat extends StatelessWidget {
         theme: ThemeData(
             primaryColor: LiteChatConstants.primaryColor,
             accentColor: LiteChatConstants.accentColor),
-        home: HomeScreen(),
+        home: AnimatedSplashScreen(
+          nextScreen: HomeScreen(),
+          splash: 'assets/app_icon.png',
+          splashTransition: SplashTransition.rotationTransition,
+          pageTransitionType: PageTransitionType.scale,
+        ),
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
