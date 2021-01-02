@@ -19,8 +19,8 @@ class LiteChat extends StatelessWidget {
         theme: ThemeData(
             primaryColor: LiteChatConstants.primaryColor,
             accentColor: LiteChatConstants.accentColor),
-        home: AnimatedSplashScreen(
-          nextScreen: HomeScreen(),
+        home: AnimatedSplashScreen.withScreenFunction(
+          screenFunction: () async => inflateHomeScreen(),
           splash: 'assets/app_icon.png',
           splashTransition: SplashTransition.rotationTransition,
           pageTransitionType: PageTransitionType.scale,
@@ -35,5 +35,9 @@ class LiteChat extends StatelessWidget {
         localeResolutionCallback:
             (Locale locale, Iterable<Locale> supportedLocales) =>
                 S.delegate.supportedLocales.first);
+  }
+
+  Future<Widget> inflateHomeScreen() async {
+    return HomeScreen();
   }
 }
