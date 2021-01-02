@@ -149,8 +149,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: ClipRRect(
                       borderRadius: LiteChatConstants.listBorderRadius,
                       child: ListView.builder(
-                          physics: const BouncingScrollPhysics(
-                              parent: AlwaysScrollableScrollPhysics()),
+                          physics: LiteChatConstants.bouncyScrollPhysics,
                           padding: messageTopPadding,
                           itemCount: messages.length,
                           reverse: true,

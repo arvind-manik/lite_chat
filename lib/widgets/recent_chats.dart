@@ -40,8 +40,7 @@ class RecentChats extends StatelessWidget {
           child: ClipRRect(
             borderRadius: LiteChatConstants.listBorderRadius,
             child: ListView.builder(
-              physics: const BouncingScrollPhysics(
-                  parent: AlwaysScrollableScrollPhysics()),
+              physics: LiteChatConstants.bouncyScrollPhysics,
               itemCount: chats.length,
               itemBuilder: (BuildContext context, int index) {
                 final Message lastMessage = chats[index];

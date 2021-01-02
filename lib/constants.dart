@@ -10,6 +10,10 @@ class LiteChatConstants {
   static final BorderRadius listBorderRadius = BorderRadius.only(
       topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0));
 
+  //Scroll physics
+  static final ScrollPhysics bouncyScrollPhysics =
+      const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics());
+
   //Colors
   static final Color primaryColor = Colors.red;
   static final Color accentColor = Color(0xFFFEF9EB);
